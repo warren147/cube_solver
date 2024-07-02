@@ -1,43 +1,43 @@
 import numpy as np
 
-white = [
+whiteSide = [
     ["w","w","w"],
     ["w","w","w"],
     ["w","w","w"]
 ]
-white = np.array(white)
+whiteSide = np.array(whiteSide)
 
-yellow = [
+yellowSide = [
     ["y","y","y"],
     ["y","y","y"],
     ["y","y","y"]
 ]
-yellow = np.array(yellow)
+yellowSide = np.array(yellowSide)
 
-green = [
+greenSide = [
     ["g","g","g"],
     ["g","g","g"],
     ["g","g","g"]
 ]
-green = np.array(green)
+greenSide = np.array(greenSide)
 
-blue = [
+blueSide = [
     ["b","b","b"],
     ["b","b","b"],
     ["b","b","b"]
 ]
-blue = np.array(blue)
+blueSide = np.array(blueSide)
 
-red = [
+redSide = [
     ["r","r","r"],
     ["r","r","r"],
     ["r","r","r"]
 ]
-red = np.array(red)
+redSide = np.array(redSide)
 
-orange = [
+orangeSide = [
     ["o","o","o"],
     ["o","o","o"],
     ["o","o","o"]
 ]
-orange = np.array(orange)
+orangeSide = np.array(orangeSide)
