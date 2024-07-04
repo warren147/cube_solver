@@ -96,30 +96,6 @@ def rotateBack():
     cube.yellowSide[2][0],cube.yellowSide[2][1],cube.yellowSide[2][2] = tempYellow[0],tempYellow[1],tempYellow[2]
     cube.redSide[0][2],cube.redSide[1][2],cube.redSide[2][2] = tempRed[0],tempRed[1],tempRed[2]
 
-def rotateRight3():
-    for i in range(3):
-        rotateRight()
-
-def rotateLeft3():
-    for i in range(3):
-        rotateLeft()
-
-def rotateUp3():
-    for i in range(3):
-        rotateUp()
-
-def rotateDown3():
-    for i in range(3):
-        rotateDown()
-    
-def rotateFront3():
-    for i in range(3):
-        rotateFront()
-
-def rotateBack3():
-    for i in range(3):
-        rotateBack()
-
 def rotateRight2():
     for i in range(2):
         rotateRight()
@@ -142,4 +118,28 @@ def rotateFront2():
 
 def rotateBack2():
     for i in range(2):
+        rotateBack()
+
+def rotateRight3():
+    for i in range(3):
+        rotateRight()
+
+def rotateLeft3():
+    for i in range(3):
+        rotateLeft()
+
+def rotateUp3():
+    for i in range(3):
+        rotateUp()
+
+def rotateDown3():
+    for i in range(3):
+        rotateDown()
+    
+def rotateFront3():
+    for i in range(3):
+        rotateFront()
+
+def rotateBack3():
+    for i in range(3):
         rotateBack()
