@@ -217,3 +217,10 @@ def main(root):
         Button(colourSel,width=6,height=2,bg=cols[4],command=lambda:selected_colour(mode,4)),
         Button(colourSel,width=6,height=2,bg=cols[5],command=lambda:selected_colour(mode,5)),
     ]
+
+    selectors[0].grid(row=0,column=0,padx=5,pady=2)
+    selectors[1].grid(row=0,column=1,padx=5,pady=2)
+    selectors[2].grid(row=1,column=0,padx=5,pady=2)
+    selectors[3].grid(row=1,column=1,padx=5,pady=2)
+    selectors[4].grid(row=2,column=0,padx=5,pady=2)
+    selectors[5].grid(row=2,column=1,padx=5,pady=2)
