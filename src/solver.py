@@ -176,3 +176,44 @@ def selecttext(c):
     }.get(c)
     return f
 
+def main(root):
+    global cols,Cols,selected,buts,selectors,dispcube
+    cols = ["green","blue","white","yellow","red","orange"]
+    Cols = ["g","b","w","y","r","o"]
+    selected = 0
+
+    #DEFINING FRAMES
+    title = LabelFrame(root,padx = 300)
+    dispcube = LabelFrame(root,padx = 10,pady = 15,text = "Current State Of Cube")
+    modeSel = LabelFrame(root,padx = 60, pady = 10, text = "Select Mode")
+    colourSel = LabelFrame(root,padx = 35,pady = 10,text = "Pick A Colour")
+    scramble = LabelFrame(root,text = "Scramble(Green Front White Top)")
+    options = LabelFrame(root,text = "Options",padx = 80,pady = 10)
+    output = LabelFrame(root,padx = 2, pady = 2,text = "Solution(Green Front White Top)")
+
+    #PLACING FRAMES
+    title.grid(row = 0, column = 0, columnspan=2,padx = 10,pady = 10)
+    dispcube.grid(row = 1, column = 0, rowspan = 4,padx = 10)
+    modeSel.grid(row = 1, column = 1,padx = 10)
+    colourSel.grid(row = 2, column = 1,padx = 10,pady = 5)
+    scramble.grid(row = 3, column = 1)
+    options.grid(row = 4, column = 1,padx = 10)
+    output.grid(row = 5, column = 0,padx = 10,pady = 10)
+
+    #TITLE
+    Label(title,text = "RUBIK CUBE SOLVER",pady = 3).grid(row = 0, column = 0)
+
+    #MODE SELECTOR
+    mode = IntVar()
+    Radiobutton(modeSel, text = "Browse Sides", variable = mode, value = 0,command = lambda:browse(mode)).pack(anchor = W)
+    Radiobutton(modeSel, text = "Edit Side", variable = mode, value = 1,command = edit).pack(anchor = W)
+
+    #COLOUR SELECTOR
+    selectors = [
+        Button(colourSel,width=6,height=2,bg=cols[0],command=lambda:selected_colour(mode,0)),
+        Button(colourSel,width=6,height=2,bg=cols[1],command=lambda:selected_colour(mode,1)),
+        Button(colourSel,width=6,height=2,bg=cols[2],command=lambda:selected_colour(mode,2)),
+        Button(colourSel,width=6,height=2,bg=cols[3],command=lambda:selected_colour(mode,3)),
+        Button(colourSel,width=6,height=2,bg=cols[4],command=lambda:selected_colour(mode,4)),
+        Button(colourSel,width=6,height=2,bg=cols[5],command=lambda:selected_colour(mode,5)),
+    ]
