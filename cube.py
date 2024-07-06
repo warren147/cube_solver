@@ -41,3 +41,5 @@ orangeSide = [
     ["o","o","o"]
 ]
 orangeSide = np.array(orangeSide)
+
+ins = 1
