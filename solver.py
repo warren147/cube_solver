@@ -229,7 +229,7 @@ def main(root):
     opt = Entry(output,width=71,state = "readonly")
     opt.grid(row = 0, column = 0)
 
-    ex = Button(root,text = "EXIT",command = root.destroy)
+    ex = Button(root,text = "EXIT",command = root.destroy, bg="red")
     ex.grid(row = 5, column = 1, padx = 10, pady = 10, sticky = W+E)
 
     holder = LabelFrame(dispcube,bg="white")
