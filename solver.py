@@ -11,7 +11,7 @@ def showSide(cubeSide):
         3:"0415",
         4:"2130",
         5:"2031",
-    }.get(cubeSide,dispcube)
+    }.get(cubeSide, dispcube)
 
     cubeSide = columns[cubeSide]
     cubeFace = {
@@ -23,7 +23,7 @@ def showSide(cubeSide):
         columns[5]:cube.orangeSide,
     }.get(cubeSide)
     
-    n=0
+    n = 0
     for i in range(9):
         colors = {
             "g":columns[0],
@@ -38,10 +38,10 @@ def showSide(cubeSide):
         buttons[i].grid(row=int(n/3),column=int(n%3),padx=2,pady=2)
         n+=1
 
-    Button(dispcube,width=6,height=3,bg=columns[int(surrounding[0])],state=DISABLED).grid(row=0,column=2,pady = 40)  #top
-    Button(dispcube,width=6,height=3,bg=columns[int(surrounding[1])],state=DISABLED).grid(row=2,column=4,padx = 40)  #right
-    Button(dispcube,width=6,height=3,bg=columns[int(surrounding[2])],state=DISABLED).grid(row=4,column=2,pady = 40)  #bottom
-    Button(dispcube,width=6,height=3,bg=columns[int(surrounding[3])],state=DISABLED).grid(row=2,column=0,padx = 40)  #left
+    Button(dispcube,width=3,height=3,bg=columns[int(surrounding[0])],state=DISABLED).grid(row=0,column=2,pady = 40)  #top
+    Button(dispcube,width=3,height=3,bg=columns[int(surrounding[1])],state=DISABLED).grid(row=2,column=4,padx = 40)  #right
+    Button(dispcube,width=3,height=3,bg=columns[int(surrounding[2])],state=DISABLED).grid(row=4,column=2,pady = 40)  #bottom
+    Button(dispcube,width=3,height=3,bg=columns[int(surrounding[3])],state=DISABLED).grid(row=2,column=0,padx = 40)  #left
 
 def solve(opt):
     opt.config(state = "normal")
@@ -189,12 +189,12 @@ def main(root):
     Radiobutton(modeSel, text = "Edit Side", variable = mode, value = 1,command = edit).pack(anchor = W)
 
     selectors = [
-        Button(colorsSel,width=6,height=2,bg=columns[0],command=lambda:selected_colors(mode,0)),
-        Button(colorsSel,width=6,height=2,bg=columns[1],command=lambda:selected_colors(mode,1)),
-        Button(colorsSel,width=6,height=2,bg=columns[2],command=lambda:selected_colors(mode,2)),
-        Button(colorsSel,width=6,height=2,bg=columns[3],command=lambda:selected_colors(mode,3)),
-        Button(colorsSel,width=6,height=2,bg=columns[4],command=lambda:selected_colors(mode,4)),
-        Button(colorsSel,width=6,height=2,bg=columns[5],command=lambda:selected_colors(mode,5)),
+        Button(colorsSel,width=3,height=3,bg=columns[0],command=lambda:selected_colors(mode,0)),
+        Button(colorsSel,width=3,height=3,bg=columns[1],command=lambda:selected_colors(mode,1)),
+        Button(colorsSel,width=3,height=3,bg=columns[2],command=lambda:selected_colors(mode,2)),
+        Button(colorsSel,width=3,height=3,bg=columns[3],command=lambda:selected_colors(mode,3)),
+        Button(colorsSel,width=3,height=3,bg=columns[4],command=lambda:selected_colors(mode,4)),
+        Button(colorsSel,width=3,height=3,bg=columns[5],command=lambda:selected_colors(mode,5)),
     ]
 
     selectors[0].grid(row=0,column=0,padx=5,pady=2)
@@ -230,25 +230,22 @@ def main(root):
     opt.grid(row = 0, column = 0)
 
     ex = Button(root,text = "EXIT",command = root.destroy)
-    ex.grid(row = 5, column = 1,padx = 10,pady = 10,sticky = W+E)
+    ex.grid(row = 5, column = 1, padx = 10, pady = 10, sticky = W+E)
 
-    holder = LabelFrame(dispcube,bg="black")
+    holder = LabelFrame(dispcube,bg="white")
     holder.grid(row = 1,column = 1, rowspan = 3, columnspan = 3)
 
     buttons = [
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3),
-            Button(holder,width=6,height=3)
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3),
+            Button(holder,width=3,height=3)
         ]
     showSide(selected)
 
-if __name__ == "__main__":
-    root = Tk()
-    main(root)
-    root.mainloop()
+
