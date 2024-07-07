@@ -1,4 +1,4 @@
-#!/Users/warrenchang/Downloads/cube_solver/.venv/bin/python3.12
+#!/Users/warrenchang/Downloads/cube_solver/.venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys

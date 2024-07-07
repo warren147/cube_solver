@@ -76,10 +76,10 @@ def reset(opt,mode):
             cube.yellowSide[i][j] = Cols[3]
     for i in range(3):
         for j in range(3):
-            cube.red[i][j] = Cols[4]
+            cube.redSide[i][j] = Cols[4]
     for i in range(3):
         for j in range(3):
-            cube.orange[i][j] = Cols[5]
+            cube.orangeSide[i][j] = Cols[5]
     if not mode.get():
         showSide(0)
     else:
@@ -167,12 +167,12 @@ def main(root):
     selected = 0
 
     title = LabelFrame(root,padx = 300)
-    dispcube = LabelFrame(root,padx = 10,pady = 15,text = "Current State Of Cube")
+    dispcube = LabelFrame(root,padx = 10,pady = 15,text = "State Of Cube")
     modeSel = LabelFrame(root,padx = 60, pady = 10, text = "Select Mode")
-    colorsSel = LabelFrame(root,padx = 35,pady = 10,text = "Pick A Colour")
-    scramble = LabelFrame(root,text = "Scramble(Green Front White Top)")
+    colorsSel = LabelFrame(root,padx = 35,pady = 10,text = "Pick A Color")
+    scramble = LabelFrame(root,text = "Scramble")
     options = LabelFrame(root,text = "Options",padx = 80,pady = 10)
-    output = LabelFrame(root,padx = 2, pady = 2,text = "Solution(Green Front White Top)")
+    output = LabelFrame(root,padx = 2, pady = 2,text = "Solution")
 
     title.grid(row = 0, column = 0, columnspan=2,padx = 10,pady = 10)
     dispcube.grid(row = 1, column = 0, rowspan = 4,padx = 10)
@@ -204,24 +204,24 @@ def main(root):
     selectors[4].grid(row=2,column=0,padx=5,pady=2)
     selectors[5].grid(row=2,column=1,padx=5,pady=2)
 
-    Button(scramble,width=2,text = "R",command=lambda: [moves.R(),showSide(selected)]).grid(row = 0, column = 0)
-    Button(scramble,width=2,text = "L",command=lambda: [moves.L(),showSide(selected)]).grid(row = 0, column = 1)
-    Button(scramble,width=2,text = "F",command=lambda: [moves.F(),showSide(selected)]).grid(row = 0, column = 2)
-    Button(scramble,width=2,text = "B",command=lambda: [moves.B(),showSide(selected)]).grid(row = 0, column = 3)
-    Button(scramble,width=2,text = "U",command=lambda: [moves.U(),showSide(selected)]).grid(row = 0, column = 4)
-    Button(scramble,width=2,text = "D",command=lambda: [moves.D(),showSide(selected)]).grid(row = 0, column = 5)
-    Button(scramble,width=2,text = "R'",command=lambda: [moves.r(),showSide(selected)]).grid(row = 1, column = 0)
-    Button(scramble,width=2,text = "L'",command=lambda: [moves.l(),showSide(selected)]).grid(row = 1, column = 1)
-    Button(scramble,width=2,text = "F'",command=lambda: [moves.f(),showSide(selected)]).grid(row = 1, column = 2)
-    Button(scramble,width=2,text = "B'",command=lambda: [moves.b(),showSide(selected)]).grid(row = 1, column = 3)
-    Button(scramble,width=2,text = "U'",command=lambda: [moves.u(),showSide(selected)]).grid(row = 1, column = 4)
-    Button(scramble,width=2,text = "D'",command=lambda: [moves.d(),showSide(selected)]).grid(row = 1, column = 5)
-    Button(scramble,width=2,text = "R2",command=lambda: [moves.R2(),showSide(selected)]).grid(row = 2, column = 0)
-    Button(scramble,width=2,text = "L2",command=lambda: [moves.L2(),showSide(selected)]).grid(row = 2, column = 1)
-    Button(scramble,width=2,text = "F2",command=lambda: [moves.F2(),showSide(selected)]).grid(row = 2, column = 2)
-    Button(scramble,width=2,text = "B2",command=lambda: [moves.B2(),showSide(selected)]).grid(row = 2, column = 3)
-    Button(scramble,width=2,text = "U2",command=lambda: [moves.U2(),showSide(selected)]).grid(row = 2, column = 4)
-    Button(scramble,width=2,text = "D2",command=lambda: [moves.D2(),showSide(selected)]).grid(row = 2, column = 5)
+    Button(scramble,width=2,text = "R",command=lambda: [moves.rotateRight(),showSide(selected)]).grid(row = 0, column = 0)
+    Button(scramble,width=2,text = "L",command=lambda: [moves.rotateLeft(),showSide(selected)]).grid(row = 0, column = 1)
+    Button(scramble,width=2,text = "F",command=lambda: [moves.rotateFront(),showSide(selected)]).grid(row = 0, column = 2)
+    Button(scramble,width=2,text = "B",command=lambda: [moves.rotateBack(),showSide(selected)]).grid(row = 0, column = 3)
+    Button(scramble,width=2,text = "U",command=lambda: [moves.rotateUp(),showSide(selected)]).grid(row = 0, column = 4)
+    Button(scramble,width=2,text = "D",command=lambda: [moves.rotateDown(),showSide(selected)]).grid(row = 0, column = 5)
+    Button(scramble,width=2,text = "R'",command=lambda: [moves.rotateRight3(),showSide(selected)]).grid(row = 1, column = 0)
+    Button(scramble,width=2,text = "L'",command=lambda: [moves.rotateLeft3(),showSide(selected)]).grid(row = 1, column = 1)
+    Button(scramble,width=2,text = "F'",command=lambda: [moves.rotateFront3(),showSide(selected)]).grid(row = 1, column = 2)
+    Button(scramble,width=2,text = "B'",command=lambda: [moves.rotateBack3(),showSide(selected)]).grid(row = 1, column = 3)
+    Button(scramble,width=2,text = "U'",command=lambda: [moves.rotateUp3(),showSide(selected)]).grid(row = 1, column = 4)
+    Button(scramble,width=2,text = "D'",command=lambda: [moves.rotateDown3(),showSide(selected)]).grid(row = 1, column = 5)
+    Button(scramble,width=2,text = "R2",command=lambda: [moves.rotateRight2(),showSide(selected)]).grid(row = 2, column = 0)
+    Button(scramble,width=2,text = "L2",command=lambda: [moves.rotateLeft2(),showSide(selected)]).grid(row = 2, column = 1)
+    Button(scramble,width=2,text = "F2",command=lambda: [moves.rotateFront2(),showSide(selected)]).grid(row = 2, column = 2)
+    Button(scramble,width=2,text = "B2",command=lambda: [moves.rotateBack2(),showSide(selected)]).grid(row = 2, column = 3)
+    Button(scramble,width=2,text = "U2",command=lambda: [moves.rotateUp2(),showSide(selected)]).grid(row = 2, column = 4)
+    Button(scramble,width=2,text = "D2",command=lambda: [moves.rotateDown2(),showSide(selected)]).grid(row = 2, column = 5)
 
     Button(options,width=10,text="RESET CUBE",command=lambda:reset(opt,mode)).grid(row=0,column=0)
     Button(options,width=17,text="GENERATE SOLUTION",command=lambda:solve(opt)).grid(row=1,column=0)

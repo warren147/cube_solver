@@ -13,6 +13,5 @@ if __name__ == "__main__":
     frame = Frame(uiRight ,width = 950, height = 670)
     frame.place(relx=0.5, rely=0.5,anchor = "center")
     ui.add(uiLeft,text = "Solver")
-    ui.add(uiRight ,text = "Timer")
     ui.pack()
     gui.mainloop()
