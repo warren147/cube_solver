@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 import solver
 
 if __name__ == "__main__":

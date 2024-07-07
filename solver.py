@@ -166,7 +166,6 @@ def main(root):
     Cols = ["g","b","w","y","r","o"]
     selected = 0
 
-    title = LabelFrame(root,padx = 300)
     dispcube = LabelFrame(root,padx = 10,pady = 15,text = "State Of Cube")
     modeSel = LabelFrame(root,padx = 60, pady = 10, text = "Select Mode")
     colorsSel = LabelFrame(root,padx = 35,pady = 10,text = "Pick A Color")
@@ -174,7 +173,6 @@ def main(root):
     options = LabelFrame(root,text = "Options",padx = 80,pady = 10)
     output = LabelFrame(root,padx = 2, pady = 2,text = "Solution")
 
-    title.grid(row = 0, column = 0, columnspan=2,padx = 10,pady = 10)
     dispcube.grid(row = 1, column = 0, rowspan = 4,padx = 10)
     modeSel.grid(row = 1, column = 1,padx = 10)
     colorsSel.grid(row = 2, column = 1,padx = 10,pady = 5)
@@ -182,7 +180,6 @@ def main(root):
     options.grid(row = 4, column = 1,padx = 10)
     output.grid(row = 5, column = 0,padx = 10,pady = 10)
 
-    Label(title,text = "RUBIK CUBE SOLVER",pady = 3).grid(row = 0, column = 0)
 
     mode = IntVar()
     Radiobutton(modeSel, text = "Browse Sides", variable = mode, value = 0,command = lambda:browse(mode)).pack(anchor = W)
