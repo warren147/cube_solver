@@ -169,7 +169,7 @@ def main(root):
     dispcube = LabelFrame(root,padx = 10,pady = 15,text = "State Of Cube")
     modeSel = LabelFrame(root,padx = 60, pady = 10, text = "Select Mode")
     colorsSel = LabelFrame(root,padx = 35,pady = 10,text = "Pick A Color")
-    scramble = LabelFrame(root,text = "Scramble")
+    scramble = LabelFrame(root,text = "Moves")
     options = LabelFrame(root,text = "Options",padx = 80,pady = 10)
     output = LabelFrame(root,padx = 2, pady = 2,text = "Solution")
 
@@ -241,7 +241,7 @@ def main(root):
             Button(holder,width=3,height=3),
             Button(holder,width=3,height=3),
             Button(holder,width=3,height=3),
-            Button(holder,width=3,height=3)
+            Button(holder,width=3,height=3) 
         ]
     showSide(selected)
 
