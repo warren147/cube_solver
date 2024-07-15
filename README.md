@@ -13,11 +13,11 @@ An application designed to assist users in solving a standard 3x3 Rubik’s Cube
 
 ## Prerequisites
 
-Make sure you have the latest version of Python3<br>
-Download Python3 [here]([https://www.oracle.com/java/technologies/javase-downloads.html](https://www.python.org/downloads/))
+Make sure you have the latest version of Python3 <br>
+Download Python3 [here](https://www.python.org/downloads/)
 
 Make sure you have Kociemba installed
-'pip3 install kociemba'
+```pip3 install kociemba```
 
 
 ## Executing Program
