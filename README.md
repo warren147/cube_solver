@@ -1,6 +1,6 @@
 # Rubiks Cube Solver
 
-Created Summer 2024<br>
+Created June 2024<br>
 An application designed to assist users in solving a standard 3x3 Rubik’s Cube using the Kociemba algorithm.  
 
 ## Table of contents
