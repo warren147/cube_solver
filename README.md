@@ -1,38 +1,53 @@
-# Rubiks Cube Solver
+# 3D Rubik's Cube Solver
 
-Created June 2024<br>
-An application designed to assist users in solving a standard 3x3 Rubik’s Cube using the Kociemba algorithm.  
+A from-scratch revamp of the original project featuring a real-time, rotatable 3D cube, live editing tools, scrambles, and a Kociemba-based solver queue. Everything now runs inside a single pygame window so you can inspect, edit, and solve without juggling dialogs.
 
-## Table of contents
-* [Prerequisites](#prerequisites)
-* [Executing Program](#executing-program)
-* [Inspiration](#inspiration)
-* [Future Development](#future-development)
-* [Contact](#contact)
+## Features
+- **3D viewer** – drag to orbit the cube, with subtle shading to keep orientation obvious.
+- **Edit mode** – pick any sticker, recolor it with the palette, or recreate a physical scramble by hand.
+- **Keyboard moves** – press `R/L/U/D/F/B`, hold **Shift** for inverses and **Ctrl** for double turns.
+- **Scramble + reset** – generate random scrambles or snap back to a solved cube instantly.
+- **Solution queue** – call the Kociemba solver, preview every move, and step through them with a button or the `N` key.
+- **Clean control panel** – concise sidebar with color swatches, essential buttons, and shortcut hints right beside the cube.
 
+## Requirements
+- Python 3.9+
+- [pygame](https://www.pygame.org/) for rendering
+- [kociemba](https://pypi.org/project/kociemba/) for optimal solutions (optional but recommended)
 
-## Prerequisites
+Install the dependencies with:
 
-Make sure you have the latest version of Python3 <br>
-Download Python3 [here](https://www.python.org/downloads/)
+```bash
+pip3 install pygame kociemba
+```
 
-Make sure you have Kociemba installed
-```pip3 install kociemba```
+> If `kociemba` is missing the UI will still run, but the "Solve" button will report that the solver backend is unavailable.
 
+## Running the app
 
-## Executing Program
+```bash
+python3 main.py
+```
 
-Download the code to your local device. Then, run the "main.py" file to open the GUI. 
+The window opens with the cube in rotation mode. Drag with the left mouse button to orbit the view.
 
-## Inspiration
+## Controls & Shortcuts
 
-Ever since I was young, I’ve had a strong interest in solving Rubik’s cubes. Over the years, I’ve often found myself teaching others how to solve them. However, many people find the process confusing due to the complexity and multistep nature of solving a Rubik’s cube, which can be difficult to remember. This inspired me to create a project that specifically outlines the steps to help others solve the Rubik’s cube more easily.
+| Action | How |
+| --- | --- |
+| Toggle edit mode | `E` key or the panel button |
+| Scramble cube | `S` key or the "Scramble" button |
+| Reset cube | `Backspace` key or the "Reset" button |
+| Solve cube | `Space` key or the "Solve" button |
+| Apply next solution move | `N` key or the "Apply Next Move" button |
+| Manual turns | `R/L/U/D/F/B` (hold **Shift** for `X'`, **Ctrl** for `X2`) |
+| Paint stickers | Enter edit mode, select a color swatch, then click stickers |
 
-## Future Development
+## Tips
+- The solution preview panel shows the queued moves in chunks of six; apply them one-by-one with `N` so you can follow along on a physical cube.
+- Hover a sticker while editing to see its face/row/column plus the current color.
+- Holding the mouse while editing lets you "paint" multiple stickers quickly.
+- Center stickers stay locked to keep the cube mechanically valid; if you need to restore them, use the **Reset** button.
 
-Expand the Rubik’s cube to include 4x4 and other higher-dimensional versions, as well as different shapes. Enhance the user interface for a more polished appearance. Add new features such as tutorials and a 3D view. 
-
-## Contact
-
-This project was created by [Warren Chang](https://www.linkedin.com/in/warren-chang-215644229/) - Feel free to contact me if you have any questions :)
-
+## License
+This project is distributed for learning purposes; customize and extend it as you like!
